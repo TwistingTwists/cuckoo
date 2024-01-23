@@ -18,7 +18,8 @@ defmodule CuckooWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-
+    live "/one", ParentLive
+    live "/one/child", ParentLive.Child, :child
   end
 
   # Other scopes may use custom stacks.
