@@ -7,6 +7,11 @@
 # General application configuration
 import Config
 
+config :main_proxy,
+  http: [port: 4080]
+
+# https: [port: 4443]
+
 config :cuckoo,
   ecto_repos: [Cuckoo.Repo],
   generators: [timestamp_type: :utc_datetime]

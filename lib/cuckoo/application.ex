@@ -14,10 +14,9 @@ defmodule Cuckoo.Application do
       {Phoenix.PubSub, name: Cuckoo.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: Cuckoo.Finch},
-      # Start a worker by calling: Cuckoo.Worker.start_link(arg)
-      # {Cuckoo.Worker, arg},
-      # Start to serve requests, typically the last entry
-      CuckooWeb.Endpoint
+      CuckooWeb.Endpoint,
+      # enable multiple backends
+      {Cuckoo.Proxy, [log_requests: false]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
